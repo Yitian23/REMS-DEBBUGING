@@ -1,0 +1,1876 @@
+/* ===== CRITICAL: Page Scrolling ===== */
+html, body {
+    height: 100vh !important;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.main-content {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: 100% !important;
+    box-sizing: border-box;
+}
+/* Property content - NO SCROLLING HERE */
+.property-content {
+    flex: 1;
+    overflow: hidden !important;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.property-list {
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+.action-bar {
+    display: none;
+}
+
+/* ===== Buttons ===== */
+.btn-add-property {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.btn-add-property:hover {
+    background-color: #0019de;
+}
+
+.btn-cancel {
+    background-color: white !important;
+    border: 2px solid #333 !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: bold !important;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-cancel:hover {
+    background-color: #545b62;
+}
+
+.btn-save {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-save:hover {
+    background-color: #0019de;
+}
+
+.btn-create {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-create:hover {
+    background-color: #0019de;
+}
+
+.btn-cancel-modal {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-cancel-modal:hover {
+    background-color: #545b62;
+}
+
+.btn-add-task {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: none;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    transition: background-color 0.3s;
+}
+
+.btn-add-task:hover {
+    background-color: #0019de;
+}
+
+.btn-back-detail {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.btn-back-detail:hover {
+    background-color: #0019de;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back-detail:active {
+    transform: scale(0.95);
+}
+
+.btn-back-detail i {
+    font-size: 16px;
+    margin: 0;
+}
+
+.btn-close-form {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.btn-close-form:hover {
+    background-color: #f0f0f0;
+    color: #dc3545;
+}
+
+.btn-action {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* ===== Import Button - Same size as Add New Property ===== */
+.btn-import {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    min-width: max-content;
+}
+
+.btn-import:hover {
+    background-color: #0019de;
+}
+
+/* Ensure both buttons have the same dimensions */
+.btn-import,
+.btn-add-property {
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Adjust filter-box to show buttons in a row */
+.filter-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Adjust search box width to accommodate Import button */
+.search-box {
+    display: flex;
+    gap: 10px;
+    flex: 0 1 60%;
+    max-width: 600px;
+}
+
+/* ===== Add Property Form ===== */
+.add-property-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.add-property-form h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.form-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-section h3 {
+    color: #001d9e;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label,
+.form-label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.form-input,
+.form-select,
+.form-textarea {
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    border: 2px solid #333;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;  /* â† Changed from 5px to 30px */
+    padding-bottom: 20px;  /* â† Added extra padding for safety */
+}
+.date-time-row {
+    display: flex;
+    gap: 15px;
+}
+
+.date-time-row .form-group {
+    flex: 1;
+}
+
+/* Search and filter areas - FIXED at top, no scrolling */
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 15px;
+    position: relative;
+    background-color: transparent;
+    z-index: 90;
+    flex-shrink: 0;
+}
+.search-box {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #0019de;
+}
+
+.filter-box select {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* ===== Property Table ===== */
+.table-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 400px;
+    height: calc(100vh - 250px);
+}
+
+.property-table {
+    width: 100%;
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.property-table thead {
+    background-color: #001d9e;
+    color: white;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.property-table thead tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.property-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    background-color: #001d9e;
+}
+
+.property-table th:has(.dropdown-sort) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Scrollable tbody - ONLY THIS SCROLLS */
+.property-table tbody {
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex: 1;
+    scrollbar-gutter: stable;
+}
+
+/* Custom scrollbar for tbody */
+.property-table tbody::-webkit-scrollbar {
+    width: 12px;
+}
+
+.property-table tbody::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.property-table tbody::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+.property-table tbody::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.property-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #dee2e6;
+    transition: background-color 0.2s;
+}
+
+.property-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.property-table td {
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+}
+/* Tags column (5th column) - special z-index handling */
+.property-table thead th:nth-child(5) {
+    overflow: visible;
+    z-index: 50;
+    position: relative;
+}
+
+.property-table tbody td:nth-child(5) {
+    overflow: visible !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* CRITICAL: Tag badges must be BELOW dropdown */
+.property-table td:nth-child(5) .status-badge {
+    position: relative;
+    z-index: 1 !important;
+}
+
+/* CRITICAL: When dropdown is open, ensure it's above everything */
+.property-table thead th:nth-child(5):has(.dropdown-sort-content.show) {
+    z-index: 100 !important;
+}
+
+/* ===== Status/Tags Badge Colors ===== */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1 !important;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.status-new-lead {
+    background-color: #00BCD4;
+    color: white;
+}
+
+.status-proposal {
+    background-color: #2196F3;
+    color: white;
+}
+
+.status-follow-up {
+    background-color: #9E9E9E;
+    color: white;
+}
+
+.status-on-progress {
+    background-color: #FFC107;
+    color: #212529;
+}
+
+.status-negotiation {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.status-signing-contract {
+    background-color: #FF9800;
+    color: white;
+}
+
+.status-not-interested {
+    background-color: #F44336;
+    color: white;
+}
+
+.status-closed-deal {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Legacy status classes */
+.status-available {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-sold {
+    background-color: #dc3545;
+    color: white;
+}
+
+.status-rented {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.status-pending {
+    background-color: #17a2b8;
+    color: white;
+}
+
+/* ===== Sort Button & Dropdown ===== */
+.sort-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 4px 8px;
+    margin-left: 8px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.sort-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.sort-btn i {
+    transition: transform 0.3s;
+}
+
+.sort-btn:active {
+    transform: scale(0.95);
+}
+
+.dropdown-sort {
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+}
+
+.dropdown-sort-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    z-index: 101 !important;
+    border-radius: 4px;
+    right: 0;
+    top: 100%;
+    margin-top: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+}
+
+.dropdown-sort-content.show {
+    display: block !important;
+    z-index: 101 !important;
+    animation: dropdownFade 0.2s ease-in;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-sort-item {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+}
+
+.dropdown-sort-item:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-sort-item:active {
+    background-color: #e0e0e0;
+}
+
+.dropdown-sort-item i {
+    color: #666;
+    font-size: 14px;
+    width: 16px;
+}
+
+.dropdown-sort-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 4px 0;
+}
+
+.tag-dot,
+.filter-badge {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.filter-badge.status-new-lead {
+    background-color: #00BCD4;
+}
+
+.filter-badge.status-proposal {
+    background-color: #2196F3;
+}
+
+.filter-badge.status-follow-up {
+    background-color: #9E9E9E;
+}
+
+.filter-badge.status-on-progress {
+    background-color: #FFC107;
+}
+
+.filter-badge.status-negotiation {
+    background-color: #9C27B0;
+}
+
+.filter-badge.status-signing-contract {
+    background-color: #FF9800;
+}
+
+.filter-badge.status-not-interested {
+    background-color: #F44336;
+}
+
+.filter-badge.status-closed-deal {
+    background-color: #4CAF50;
+}
+
+/* Ensure all row badges stay below the dropdown when it's open */
+body:has(.dropdown-sort-content.show) .property-table tbody td .status-badge {
+    z-index: 1 !important;
+}
+
+/* ===== Detail View ===== */
+.detail-view {
+    display: none;
+}
+
+.tab-navigation {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tab-container {
+    display: flex;
+    border: 2px solid #001d9e;
+    border-radius: 25px;
+    overflow: hidden;
+    flex: 0 0 auto;
+}
+
+.tab-button {
+    padding: 12px 30px;
+    background-color: white;
+    color: #001d9e;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.tab-button.active {
+    background-color: #001d9e;
+    color: white;
+}
+
+.tab-button:hover:not(.active) {
+    background-color: #f0f0f0;
+}
+
+/* ===== Tab Actions (Edit Button) ===== */
+.tab-actions-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.btn-edit-property {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+    white-space: nowrap;
+}
+
+.btn-edit-property:hover {
+    background-color: #0019de;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-edit-property:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.btn-edit-property i {
+    font-size: 14px;
+}
+
+.tab-content {
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== Lead Information ===== */
+.lead-info-container {
+    background-color: white;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.lead-info-row {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.lead-info-label {
+    font-weight: 600;
+    width: 80px;
+    color: #333;
+}
+
+.lead-info-value {
+    flex: 1;
+    color: #555;
+}
+
+/* ===== Property Information ===== */
+.property-info-section {
+    margin-top: 30px;
+}
+
+.property-info-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.property-info-container {
+    background-color: white;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.property-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.property-info-item {
+    display: flex;
+    align-items: center;
+}
+
+.property-info-item label {
+    font-weight: 600;
+    width: 140px;
+    color: #333;
+}
+
+.property-info-item span {
+    color: #555;
+}
+
+/* ===== Notes Section ===== */
+.notes-section {
+    margin-top: 30px;
+}
+
+.notes-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.notes-textarea-editable {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: vertical;
+    font-family: inherit;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.notes-textarea-editable:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: white;
+}
+
+.notes-save-indicator {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #28a745;
+    font-weight: 500;
+}
+
+.notes-save-indicator.visible {
+    display: flex;
+}
+
+.notes-save-indicator i {
+    font-size: 16px;
+}
+
+/* ===== Activities Tab ===== */
+.activities-content {
+    padding: 20px 0;
+}
+
+.activities-section {
+    margin-top: 30px;
+}
+
+.activities-section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.task-assigned-info {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* All Tasks Section */
+.all-tasks-section {
+    margin-bottom: 30px;
+}
+
+.all-tasks-container {
+    background-color: white;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.all-tasks-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.all-tasks-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.all-tasks-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.all-tasks-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.all-task-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: background-color 0.2s;
+}
+
+.all-task-item:hover {
+    background-color: #f8f9fa;
+}
+
+.all-task-item:last-child {
+    border-bottom: none;
+}
+
+.task-checkbox-all {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.task-content-all {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.task-title-all {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+.task-date-all {
+    color: #666;
+    font-size: 13px;
+}
+
+.task-assignee-all {
+    color: #666;
+    font-size: 13px;
+}
+
+.task-details-all {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.task-status-all,
+.task-priority-all {
+    font-weight: 600;
+}
+
+.task-status-all.status-not-started {
+    color: #dc3545;
+}
+
+.task-status-all.status-upcoming {
+    color: #ffc107;
+}
+
+.task-status-all.status-on-progress {
+    color: #0dcaf0;
+}
+
+.task-priority-all.priority-high {
+    color: #dc3545;
+}
+
+.task-priority-all.priority-medium {
+    color: #ffc107;
+}
+
+.task-priority-all.priority-low {
+    color: #28a745;
+}
+
+/* Task Type Tabs */
+.task-type-tabs {
+    display: flex;
+    background-color: #001d9e;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.task-type-tab {
+    flex: 1;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.task-type-tab:hover {
+    background-color: #0056b3;
+}
+
+.task-type-tab.active {
+    background-color: #0056b3;
+}
+
+.task-count-badge {
+    position: absolute;
+    top: 1px;
+    right: 15px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.activity-tasks-container {
+    background-color: white;
+    border: 2px solid #001d9e;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.activity-task-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: background-color 0.2s;
+}
+
+.activity-task-item:hover {
+    background-color: #f8f9fa;
+}
+
+.activity-task-item:last-child {
+    border-bottom: none;
+}
+
+.task-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.task-content-activity {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-title-activity {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.task-date-activity {
+    color: #666;
+    font-size: 14px;
+}
+
+.task-assignee-activity {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #666;
+    font-size: 14px;
+}
+
+.task-details-activity {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.task-status-activity,
+.task-priority-activity {
+    font-weight: 600;
+}
+
+.task-notes-activity {
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* ===== Task Modal ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.activity-task-modal {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    width: 500px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* ===== Status Dropdown (Overview Section) ===== */
+.status-dropdown {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.status-dropdown:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.status-dropdown:focus {
+    border-color: #2196F3;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.status-dropdown.status-new-lead {
+    background-color: #00BCD4;
+    border-color: #00ACC1;
+}
+
+.status-dropdown.status-proposal {
+    background-color: #2196F3;
+    border-color: #1976D2;
+}
+
+.status-dropdown.status-follow-up {
+    background-color: #9E9E9E;
+    border-color: #757575;
+}
+
+.status-dropdown.status-on-progress {
+    background-color: #FFC107;
+    border-color: #FFA000;
+    color: #333;
+}
+
+.status-dropdown.status-negotiation {
+    background-color: #9C27B0;
+    border-color: #7B1FA2;
+}
+
+.status-dropdown.status-signing-contract {
+    background-color: #FF9800;
+    border-color: #F57C00;
+}
+
+.status-dropdown.status-not-interested {
+    background-color: #F44336;
+    border-color: #D32F2F;
+}
+
+.status-dropdown.status-closed-deal {
+    background-color: #4CAF50;
+    border-color: #388E3C;
+}
+
+.status-dropdown option {
+    padding: 10px;
+    background: white;
+    color: #333;
+    font-weight: 600;
+}
+
+.lead-info-value select.status-dropdown {
+    margin: 0;
+}
+
+/* ===== Modal Styles ===== */
+.modal {
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.modal-btn-confirm {
+    background-color: #dc3545;
+    color: white;
+}
+
+.modal-btn-confirm:hover {
+    background-color: #c82333;
+}
+
+.modal-btn-cancel {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-btn-cancel:hover {
+    background-color: #545b62;
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+}
+
+.empty-state i {
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.empty-state p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .property-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-section {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .property-content {
+        padding: 10px;
+    }
+    
+    .add-property-form,
+    .edit-form-container {
+        padding: 20px;
+    }
+    
+    .property-table {
+        font-size: 12px;
+    }
+    
+    .property-table th,
+    .property-table td {
+        padding: 10px 5px;
+    }
+    
+    .tab-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .property-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Responsive dropdown adjustments */
+    .dropdown-sort-content {
+        right: auto;
+        left: 0;
+        min-width: 180px;
+    }
+    
+    .dropdown-sort-item {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdown-sort-content {
+        min-width: 160px;
+        max-height: 300px;
+    }
+}
+
+/* ===== Performance Optimization ===== */
+* {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ===== MOBILE TASK MODAL FIX - HIGHEST PRIORITY ===== */
+@media (max-width: 767px) {
+    /* Target the modal overlay when it's shown */
+    .modal-overlay.show {
+        display: flex !important;
+    }
+
+    /* Force the activity task modal to be smaller */
+    .activity-task-modal {
+        width: calc(100vw - 40px) !important;
+        max-width: 340px !important;
+        padding: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force grid layout for form rows */
+    .activity-task-modal .form-row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .activity-task-modal .form-row .form-group {
+        flex: none !important;
+        width: 100% !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Date/Time row - 2 columns (no Queue here) */
+    .activity-task-modal .date-time-row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .activity-task-modal .date-time-row .form-group {
+        flex: none !important;
+        width: 100% !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Queue field - full width below Date/Time, above Notes */
+    .activity-task-modal .date-time-row .form-group:nth-child(3) {
+        grid-column: 1 / -1 !important;
+        max-width: 100% !important;
+    }
+
+    /* CRITICAL FIX: Reduce form input sizes */
+    .activity-task-modal .form-input,
+    .activity-task-modal .form-select,
+    .activity-task-modal .form-textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px 12px !important;
+        border: 2px solid #333 !important;
+        border-radius: 8px !important;
+        font-size: 14px !important;
+        height: auto !important;
+        min-height: 40px !important;
+    }
+
+    .activity-task-modal .form-textarea {
+        min-height: 80px !important;
+        resize: vertical !important;
+    }
+
+    .activity-task-modal .form-label {
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        margin-bottom: 6px !important;
+        display: block !important;
+    }
+
+    .activity-task-modal .form-group {
+        margin-bottom: 12px !important;
+    }
+
+    .activity-task-modal .modal-header {
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .activity-task-modal .modal-buttons {
+        display: flex !important;
+        gap: 12px !important;
+        margin-top: 15px !important;
+    }
+
+    .activity-task-modal .modal-buttons button {
+        flex: 1 !important;
+        width: 50% !important;
+        padding: 12px 20px !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+    }
+
+    .activity-task-modal .btn-create {
+        background-color: #001d9e !important;
+        color: white !important;
+        border: none !important;
+    }
+
+    .activity-task-modal .btn-cancel-modal {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+
+    .activity-task-modal .modal-buttons {
+        display: flex !important;
+        gap: 12px !important;
+        margin-top: 15px !important;
+        justify-content: center !important;
+    }
+
+    .activity-task-modal .modal-buttons button {
+        flex: 1 !important;
+        width: 50% !important;
+        padding: 12px 20px !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+    }
+
+    .activity-task-modal .btn-create {
+        background-color: #001d9e !important;
+        color: white !important;
+        border: none !important;
+    }
+
+    .activity-task-modal .btn-cancel-modal {
+        background-color: #6c757d !important;
+        color: white !important;
+        border: none !important;
+    }
+
+    /* FIX: Add New Property Button visibility */
+    .btn-add-property {
+        background-color: #0044cc !important;
+        color: white !important;
+        border: none !important;
+        padding: 10px 20px !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+    }
+
+    .btn-add-property:hover {
+        background-color: #003399 !important;
+    }
+}
+
+/* Mobile S - 320px */
+@media (max-width: 374px) {
+    .activity-task-modal {
+        max-width: 300px !important;
+        padding: 18px !important;
+    }
+
+    .activity-task-modal .form-row {
+        gap: 10px !important;
+    }
+
+    .activity-task-modal .date-time-row {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+    }
+
+    .activity-task-modal .date-time-row .form-group:nth-child(3) {
+        grid-column: 1 / -1 !important;
+        max-width: 100% !important;
+    }
+
+    .activity-task-modal .form-input,
+    .activity-task-modal .form-select,
+    .activity-task-modal .form-textarea {
+        padding: 8px 10px !important;
+        font-size: 13px !important;
+        min-height: 38px !important;
+    }
+
+    .activity-task-modal .form-textarea {
+        min-height: 70px !important;
+    }
+
+    .activity-task-modal .form-label {
+        font-size: 12px !important;
+    }
+
+    .activity-task-modal .modal-header {
+        font-size: 18px !important;
+    }
+
+    .activity-task-modal .modal-buttons button {
+        padding: 10px 16px !important;
+        font-size: 14px !important;
+    }
+
+    .activity-task-modal .btn-create {
+        background-color: #001d9e !important;
+        color: white !important;
+        border: none !important;
+    }
+
+    .activity-task-modal .btn-cancel-modal {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+
+    .btn-add-property {
+        font-size: 13px !important;
+        padding: 8px 16px !important;
+    }
+}
+
+/* Mobile L - 425px to 767px */
+@media (min-width: 425px) and (max-width: 767px) {
+    .activity-task-modal {
+        max-width: 370px !important;
+        padding: 22px !important;
+    }
+
+    .activity-task-modal .form-row {
+        gap: 14px !important;
+    }
+
+    .activity-task-modal .date-time-row {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 14px !important;
+    }
+
+    .activity-task-modal .date-time-row .form-group:nth-child(3) {
+        grid-column: 1 / -1 !important;
+        max-width: 100% !important;
+    }
+
+    .activity-task-modal .form-input,
+    .activity-task-modal .form-select,
+    .activity-task-modal .form-textarea {
+        padding: 11px 13px !important;
+        font-size: 15px !important;
+        min-height: 42px !important;
+    }
+
+    .activity-task-modal .form-textarea {
+        min-height: 90px !important;
+    }
+
+    .activity-task-modal .form-label {
+        font-size: 14px !important;
+    }
+
+    .activity-task-modal .modal-header {
+        font-size: 22px !important;
+    }
+
+    .activity-task-modal .modal-buttons button {
+        padding: 13px 22px !important;
+        font-size: 16px !important;
+    }
+
+    .activity-task-modal .btn-create {
+        background-color: #001d9e !important;
+        color: white !important;
+        border: none !important;
+    }
+
+    .activity-task-modal .btn-cancel-modal {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+
+    .btn-add-property {
+        font-size: 15px !important;
+        padding: 10px 20px !important;
+    }
+}
+/* ===== Responsive Design Updates ===== */
+@media (max-width: 1024px) {
+    .search-section {
+        flex-wrap: wrap;
+    }
+    
+    .search-box {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .filter-box {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-box {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .btn-import,
+    .btn-add-property {
+        height: 36px;
+        font-size: 13px;
+        padding: 8px 16px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-box {
+        width: 100%;
+    }
+    
+    .btn-import,
+    .btn-add-property {
+        flex: 1;
+        justify-content: center;
+        height: 38px;
+        font-size: 15px;
+        padding: 8px 12px;
+        font-weight: 600;
+    }
+    
+    .btn-import i,
+    .btn-add-property i {
+        font-size: 12px;
+    }
+}

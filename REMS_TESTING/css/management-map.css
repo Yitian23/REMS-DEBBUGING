@@ -1,0 +1,217 @@
+/* Map Container Styles */
+.property-map-container {
+    margin: 20px 0;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.property-map-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+    color: white;
+}
+
+.property-map-header i {
+    color: white;
+    font-size: 18px;
+}
+
+.property-map-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    flex: 1;
+}
+
+.map-drag-hint {
+    font-size: 11px;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#propertyMap {
+    width: 100%;
+    height: 450px;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+/* Map Info Box */
+.map-info-box {
+    background: white;
+    padding: 12px 16px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 13px;
+    color: #666;
+}
+
+.map-info-box i {
+    color: #1976d2;
+    margin-right: 6px;
+}
+
+/* Custom Leaflet Popup */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    padding: 0;
+}
+
+.leaflet-popup-content {
+    margin: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.map-popup-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.map-popup-address {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.map-popup-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1976d2;
+    margin-top: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #propertyMap {
+        height: 300px;
+    }
+    
+    .property-map-header h3 {
+        font-size: 14px;
+    }
+}
+
+/* Loading State */
+.map-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background-color: #f5f5f5;
+    color: #666;
+    font-size: 14px;
+}
+
+.map-loading i {
+    margin-right: 8px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Map Error State */
+.map-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    background-color: #fff3e0;
+    color: #e65100;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+}
+
+.map-error i {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+/* Draggable Marker Cursor */
+.leaflet-dragging .leaflet-marker-icon {
+    cursor: move !important;
+}
+
+.leaflet-marker-icon {
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.leaflet-marker-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Layer Control Styling */
+.leaflet-control-layers {
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Scale Control */
+.leaflet-control-scale {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 11px;
+}
+
+/* Save Button in Popup */
+.map-save-btn {
+    margin-top: 8px;
+    padding: 6px 12px;
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.map-save-btn:hover {
+    background: #1565c0;
+}
+
+.map-save-btn:disabled {
+    background: #9e9e9e;
+    cursor: not-allowed;
+}
+
+/* Center on Marker Button */
+.leaflet-control a {
+    text-decoration: none;
+}
+
+/* Map Info Box - Enhanced */
+.map-info-box {
+    background: linear-gradient(to right, #e3f2fd, #fff);
+    padding: 12px 16px;
+    border-top: 2px solid #1976d2;
+    font-size: 13px;
+    color: #555;
+}
+
+.map-info-box i {
+    color: #1976d2;
+    margin-right: 6px;
+}
+
+.map-info-box strong {
+    color: #333;
+}

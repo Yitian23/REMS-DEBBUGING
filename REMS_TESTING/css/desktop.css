@@ -1,0 +1,1090 @@
+/* ===========================================
+   LOGIN PAGE - RESPONSIVE SIZING ONLY
+   KEEPS ALL ORIGINAL STYLES - ONLY MAKES SIZES RESPONSIVE
+   
+   What this changes: font-size, width, height, padding, margin, gap
+   What this KEEPS: colors, borders, backgrounds, shadows, transitions
+=========================================== */
+
+/* ===========================================
+   DESKTOP BASE (768px and above)
+   Using flexible units for sizing only
+=========================================== */
+@media (min-width: 768px) {
+    /* Logo container - responsive sizing only */
+    .logo-container {
+        padding: clamp(8px, 1vh, 12px) clamp(10px, 1.5vw, 15px);
+    }
+
+    .logo-container img {
+        height: clamp(32px, 3vh, 45px);
+        margin-right: clamp(8px, 1vw, 12px);
+    }
+
+    .logo-container span {
+        font-size: clamp(22px, 2vw, 32px);
+    }
+
+    /* Login section - responsive padding only */
+    .login-section {
+        padding: clamp(25px, 3vh, 45px) clamp(25px, 3vw, 50px);
+    }
+
+    /* Logo in form - responsive width only */
+    .login-section img {
+        width: clamp(110px, 12vw, 170px);
+        margin-bottom: clamp(15px, 2vh, 25px);
+    }
+
+    /* Welcome text - responsive font size only */
+    .login-section p {
+        margin-bottom: clamp(15px, 2vh, 25px);
+        font-size: clamp(18px, 1.8vw, 28px);
+        /* Keeps original color: #0011ff */
+    }
+
+    /* Login heading - responsive font size only */
+    .login-section h1 {
+        margin-bottom: clamp(35px, 4vh, 55px);
+        font-size: clamp(40px, 4vw, 65px);
+        /* Keeps original color: #000000 */
+    }
+
+    /* Form container - responsive padding only */
+    .label-container {
+        padding-bottom: clamp(10px, 1.5vh, 18px);
+    }
+
+    /* Input fields - responsive sizing only */
+    .label-container input {
+        max-width: clamp(300px, 30vw, 450px);
+        font-size: clamp(15px, 1.3vw, 21px);
+        padding: clamp(8px, 1vh, 12px) clamp(10px, 1.2vw, 14px);
+        margin-bottom: clamp(12px, 1.5vh, 18px);
+        height: clamp(48px, 5vh, 65px);
+        /* Keeps original: background-color: #f9f9f9, border: 2px solid #ccc, etc. */
+    }
+
+    /* Labels - responsive font size only */
+    .label-container label {
+        font-size: clamp(15px, 1.3vw, 21px);
+        margin-bottom: clamp(3px, 0.5vh, 6px);
+        max-width: clamp(300px, 30vw, 450px);
+        /* Keeps original color and font-weight */
+    }
+
+    /* Individual login button - responsive sizing only */
+    .login-section button {
+        width: clamp(110px, 15vw, 200px);
+        height: clamp(42px, 5vh, 55px);
+        font-size: clamp(15px, 1.3vw, 21px);
+        padding: clamp(8px, 1vh, 12px) clamp(12px, 1.5vw, 18px);
+        /* Keeps original: background-color: #0044cc, color: white, border: none, etc. */
+    }
+
+    /* Button group - responsive width and gap only */
+    .button-group {
+        width: clamp(300px, 38vw, 520px);
+        gap: clamp(30px, 6vw, 120px);
+        padding-top: clamp(22px, 3vh, 35px);
+    }
+
+    /* Buttons within group - responsive sizing only */
+    .button-group button {
+        padding: clamp(8px, 1vh, 12px) clamp(12px, 1.5vw, 18px);
+        font-size: clamp(15px, 1.3vw, 21px);
+        height: clamp(42px, 5vh, 55px);
+        /* Keeps original: background-color: #0044cc, color: white, etc. */
+    }
+}
+
+/* ===========================================
+   SMALL LAPTOPS (768px - 1024px)
+   Adjust sizing for smaller screens
+=========================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .login-section h1 {
+        font-size: clamp(35px, 4.5vw, 52px);
+        margin-bottom: clamp(28px, 3.5vh, 45px);
+    }
+
+    .login-section p {
+        font-size: clamp(17px, 2vw, 24px);
+    }
+
+    .label-container input {
+        max-width: clamp(280px, 35vw, 400px);
+        font-size: clamp(14px, 1.5vw, 19px);
+        height: clamp(45px, 5.5vh, 58px);
+    }
+
+    .label-container label {
+        max-width: clamp(280px, 35vw, 400px);
+        font-size: clamp(14px, 1.5vw, 19px);
+    }
+
+    .login-section button {
+        width: clamp(100px, 18vw, 160px);
+        font-size: clamp(14px, 1.5vw, 19px);
+    }
+
+    .button-group {
+        max-width: clamp(280px, 42vw, 450px);
+        gap: clamp(25px, 7vw, 90px);
+    }
+
+    .button-group button {
+        font-size: clamp(14px, 1.5vw, 19px);
+    }
+
+    .login-section img {
+        width: clamp(100px, 14vw, 150px);
+    }
+}
+
+/* ===========================================
+   MEDIUM LAPTOPS (1025px - 1366px)
+   Standard laptop sizes
+=========================================== */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .login-section h1 {
+        font-size: clamp(42px, 4.2vw, 58px);
+        margin-bottom: clamp(32px, 3.8vh, 50px);
+    }
+
+    .login-section p {
+        font-size: clamp(18px, 1.7vw, 25px);
+    }
+
+    .label-container input {
+        max-width: clamp(290px, 32vw, 420px);
+        font-size: clamp(15px, 1.4vw, 20px);
+        height: clamp(47px, 5.2vh, 61px);
+    }
+
+    .label-container label {
+        max-width: clamp(290px, 32vw, 420px);
+        font-size: clamp(15px, 1.4vw, 20px);
+    }
+
+    .login-section button {
+        width: clamp(105px, 16vw, 175px);
+        height: clamp(43px, 5.2vh, 53px);
+        font-size: clamp(15px, 1.4vw, 20px);
+    }
+
+    .button-group {
+        max-width: clamp(290px, 39vw, 480px);
+        gap: clamp(32px, 6.5vw, 105px);
+    }
+
+    .button-group button {
+        font-size: clamp(15px, 1.4vw, 20px);
+        height: clamp(43px, 5.2vh, 53px);
+    }
+
+    .login-section img {
+        width: clamp(108px, 13vw, 155px);
+    }
+}
+
+/* ===========================================
+   LARGE LAPTOPS & MONITORS (1367px - 1920px)
+   Standard monitors
+=========================================== */
+@media (min-width: 1367px) and (max-width: 1920px) {
+    .login-section h1 {
+        font-size: clamp(48px, 3.5vw, 62px);
+        margin-bottom: clamp(38px, 4vh, 52px);
+    }
+
+    .login-section p {
+        font-size: clamp(20px, 1.5vw, 26px);
+    }
+
+    .label-container input {
+        max-width: clamp(330px, 28vw, 440px);
+        font-size: clamp(16px, 1.2vw, 21px);
+        height: clamp(52px, 4.8vh, 63px);
+    }
+
+    .label-container label {
+        max-width: clamp(330px, 28vw, 440px);
+        font-size: clamp(16px, 1.2vw, 21px);
+    }
+
+    .login-section button {
+        width: clamp(115px, 14vw, 185px);
+        height: clamp(45px, 4.8vh, 52px);
+        font-size: clamp(16px, 1.2vw, 21px);
+    }
+
+    .button-group {
+        max-width: clamp(330px, 36vw, 500px);
+        gap: clamp(38px, 5.5vw, 115px);
+    }
+
+    .button-group button {
+        font-size: clamp(16px, 1.2vw, 21px);
+        height: clamp(45px, 4.8vh, 52px);
+    }
+
+    .login-section img {
+        width: clamp(125px, 11vw, 165px);
+    }
+}
+
+/* ===========================================
+   EXTRA LARGE MONITORS (1921px+)
+   Large monitors, 2K/4K
+=========================================== */
+@media (min-width: 1921px) {
+    .login-section h1 {
+        font-size: clamp(54px, 3vw, 66px);
+        margin-bottom: clamp(42px, 4.2vh, 54px);
+    }
+
+    .login-section p {
+        font-size: clamp(22px, 1.3vw, 27px);
+    }
+
+    .label-container input {
+        max-width: clamp(360px, 25vw, 460px);
+        font-size: clamp(17px, 1.1vw, 22px);
+        height: clamp(55px, 4.5vh, 65px);
+    }
+
+    .label-container label {
+        max-width: clamp(360px, 25vw, 460px);
+        font-size: clamp(17px, 1.1vw, 22px);
+    }
+
+    .login-section button {
+        width: clamp(125px, 12vw, 195px);
+        height: clamp(48px, 4.5vh, 54px);
+        font-size: clamp(17px, 1.1vw, 22px);
+    }
+
+    .button-group {
+        max-width: clamp(360px, 34vw, 520px);
+        gap: clamp(45px, 5vw, 120px);
+    }
+
+    .button-group button {
+        font-size: clamp(17px, 1.1vw, 22px);
+        height: clamp(48px, 4.5vh, 54px);
+    }
+
+    .login-section img {
+        width: clamp(135px, 10vw, 175px);
+    }
+
+    .logo-container img {
+        height: clamp(38px, 2.8vh, 46px);
+    }
+
+    .logo-container span {
+        font-size: clamp(26px, 1.8vw, 33px);
+    }
+}
+
+/* ===========================================
+   ULTRA-WIDE (2560px+)
+   4K and larger
+=========================================== */
+@media (min-width: 2560px) {
+    .login-section h1 {
+        font-size: clamp(58px, 2.6vw, 70px);
+    }
+
+    .login-section p {
+        font-size: clamp(24px, 1.1vw, 29px);
+    }
+
+    .label-container input {
+        max-width: clamp(390px, 22vw, 490px);
+        font-size: clamp(18px, 1vw, 23px);
+        height: clamp(58px, 4.2vh, 68px);
+    }
+
+    .label-container label {
+        max-width: clamp(390px, 22vw, 490px);
+        font-size: clamp(18px, 1vw, 23px);
+    }
+
+    .button-group {
+        max-width: clamp(390px, 32vw, 550px);
+    }
+
+    .login-section img {
+        width: clamp(145px, 9vw, 185px);
+    }
+}
+
+@media (min-width: 768px) {
+    /* Back button - responsive sizing and positioning */
+    .back-button {
+        top: clamp(15px, 2vh, 25px);
+        left: clamp(15px, 2vw, 25px);
+    }
+
+    .back-button a {
+        width: clamp(42px, 4.5vw, 55px);
+        height: clamp(42px, 4.5vw, 55px);
+        font-size: clamp(16px, 1.8vw, 22px);
+        /* Keeps original: background-color, color, border-radius, transition, box-shadow */
+    }
+
+    /* Register container - responsive padding */
+    .register-container {
+        padding: clamp(15px, 2vw, 25px);
+        /* Keeps original: display, justify-content, align-items, min-height, width, position */
+    }
+
+    /* Register section (white form box) - responsive sizing */
+    .register-section {
+        padding: clamp(30px, 4vw, 45px);
+        max-width: clamp(480px, 50vw, 650px);
+        padding-bottom: clamp(8px, 1vh, 12px);
+        margin-top: clamp(110px, 14vh, 150px);
+        border-radius: clamp(12px, 1.2vw, 18px);
+        /* Keeps original: background-color, box-shadow, width, margin (auto), position */
+    }
+
+    /* Register heading - responsive font and positioning */
+    .register-section h1 {
+        font-size: clamp(38px, 4.2vw, 52px);
+        letter-spacing: clamp(6px, 0.8vw, 12px);
+        top: clamp(-85px, -10vh, -110px);
+        /* Keeps original: text-align, color, font-weight, margin, position, transform, z-index, white-space, width */
+    }
+
+    /* Form - responsive gap */
+    form {
+        gap: clamp(15px, 2vh, 22px);
+        /* Keeps original: display, flex-direction */
+    }
+
+    /* Name row - responsive gap */
+    .name-row {
+        gap: clamp(15px, 2vw, 22px);
+        /* Keeps original: display */
+    }
+
+    /* Labels - responsive font size */
+    label {
+        font-size: clamp(14px, 1.4vw, 18px);
+        margin-bottom: clamp(3px, 0.5vh, 6px);
+        /* Keeps original: font-weight, color */
+    }
+
+    /* Input fields - responsive sizing */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(12px, 1.5vh, 17px);
+        border-width: clamp(1.5px, 0.15vw, 2.5px);
+        border-radius: clamp(6px, 0.8vw, 10px);
+        font-size: clamp(14px, 1.4vw, 18px);
+        /* Keeps original: border-style, border-color, transition, background-color */
+    }
+
+    /* Submit button - responsive sizing */
+    button[type="submit"] {
+        padding: clamp(12px, 1.5vh, 17px) clamp(25px, 3vw, 35px);
+        border-radius: clamp(6px, 0.8vw, 10px);
+        font-size: clamp(16px, 1.6vw, 20px);
+        margin-top: clamp(15px, 2vh, 25px);
+        margin-bottom: clamp(15px, 2vh, 25px);
+        width: clamp(130px, 15vw, 170px);
+        /* Keeps original: background-color, color, border, font-weight, cursor, transition, align-self */
+    }
+}
+
+/* ===========================================
+   SMALL LAPTOPS (768px - 1024px)
+   Adjust sizing for smaller screens
+=========================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .back-button {
+        top: clamp(14px, 2.2vh, 22px);
+        left: clamp(14px, 2.2vw, 22px);
+    }
+
+    .back-button a {
+        width: clamp(40px, 5vw, 50px);
+        height: clamp(40px, 5vw, 50px);
+        font-size: clamp(15px, 2vw, 20px);
+    }
+
+    .register-section {
+        padding: clamp(28px, 4.5vw, 40px);
+        max-width: clamp(440px, 55vw, 580px);
+        margin-top: clamp(105px, 15vh, 135px);
+        border-radius: clamp(11px, 1.3vw, 16px);
+    }
+
+    .register-section h1 {
+        font-size: clamp(34px, 4.8vw, 46px);
+        letter-spacing: clamp(5px, 0.9vw, 10px);
+        top: clamp(-78px, -11vh, -98px);
+    }
+
+    form {
+        gap: clamp(14px, 2.2vh, 20px);
+    }
+
+    .name-row {
+        gap: clamp(14px, 2.2vw, 20px);
+    }
+
+    label {
+        font-size: clamp(13px, 1.5vw, 17px);
+        margin-bottom: clamp(3px, 0.6vh, 5px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(11px, 1.7vh, 16px);
+        border-radius: clamp(6px, 0.9vw, 9px);
+        font-size: clamp(13px, 1.5vw, 17px);
+    }
+
+    button[type="submit"] {
+        padding: clamp(11px, 1.7vh, 16px) clamp(23px, 3.5vw, 33px);
+        border-radius: clamp(6px, 0.9vw, 9px);
+        font-size: clamp(15px, 1.8vw, 19px);
+        margin-top: clamp(14px, 2.2vh, 23px);
+        margin-bottom: clamp(14px, 2.2vh, 23px);
+        width: clamp(120px, 17vw, 155px);
+    }
+}
+
+/* ===========================================
+   MEDIUM LAPTOPS (1025px - 1366px)
+   Standard laptop sizes
+=========================================== */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .back-button {
+        top: clamp(16px, 2vh, 24px);
+        left: clamp(16px, 2vw, 24px);
+    }
+
+    .back-button a {
+        width: clamp(44px, 4.8vw, 53px);
+        height: clamp(44px, 4.8vw, 53px);
+        font-size: clamp(17px, 1.9vw, 21px);
+    }
+
+    .register-section {
+        padding: clamp(32px, 4.2vw, 42px);
+        max-width: clamp(500px, 52vw, 620px);
+        margin-top: clamp(115px, 14.5vh, 142px);
+        border-radius: clamp(12px, 1.2vw, 17px);
+    }
+
+    .register-section h1 {
+        font-size: clamp(40px, 4.5vw, 50px);
+        letter-spacing: clamp(7px, 0.85vw, 11px);
+        top: clamp(-88px, -10.5vh, -105px);
+    }
+
+    form {
+        gap: clamp(16px, 2.1vh, 21px);
+    }
+
+    .name-row {
+        gap: clamp(16px, 2.1vw, 21px);
+    }
+
+    label {
+        font-size: clamp(14px, 1.45vw, 17px);
+        margin-bottom: clamp(3px, 0.55vh, 5px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(13px, 1.6vh, 16px);
+        border-radius: clamp(7px, 0.85vw, 9px);
+        font-size: clamp(14px, 1.45vw, 17px);
+    }
+
+    button[type="submit"] {
+        padding: clamp(13px, 1.6vh, 16px) clamp(26px, 3.2vw, 34px);
+        border-radius: clamp(7px, 0.85vw, 9px);
+        font-size: clamp(17px, 1.7vw, 19px);
+        margin-top: clamp(16px, 2.1vh, 24px);
+        margin-bottom: clamp(16px, 2.1vh, 24px);
+        width: clamp(135px, 16vw, 162px);
+    }
+}
+
+/* ===========================================
+   LARGE LAPTOPS & MONITORS (1367px - 1920px)
+   Standard monitors
+=========================================== */
+@media (min-width: 1367px) and (max-width: 1920px) {
+    .back-button {
+        top: clamp(18px, 1.9vh, 25px);
+        left: clamp(18px, 1.9vw, 25px);
+    }
+
+    .back-button a {
+        width: clamp(46px, 4.5vw, 54px);
+        height: clamp(46px, 4.5vw, 54px);
+        font-size: clamp(18px, 1.8vw, 21px);
+    }
+
+    .register-section {
+        padding: clamp(35px, 3.8vw, 44px);
+        max-width: clamp(540px, 48vw, 640px);
+        margin-top: clamp(125px, 14vh, 145px);
+        border-radius: clamp(13px, 1.1vw, 17px);
+    }
+
+    .register-section h1 {
+        font-size: clamp(44px, 4vw, 51px);
+        letter-spacing: clamp(8px, 0.75vw, 11px);
+        top: clamp(-92px, -10vh, -108px);
+    }
+
+    form {
+        gap: clamp(17px, 2vh, 21px);
+    }
+
+    .name-row {
+        gap: clamp(17px, 2vw, 21px);
+    }
+
+    label {
+        font-size: clamp(15px, 1.4vw, 18px);
+        margin-bottom: clamp(4px, 0.5vh, 6px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(14px, 1.5vh, 17px);
+        border-radius: clamp(7px, 0.8vw, 9px);
+        font-size: clamp(15px, 1.4vw, 18px);
+    }
+
+    button[type="submit"] {
+        padding: clamp(14px, 1.5vh, 17px) clamp(28px, 3vw, 34px);
+        border-radius: clamp(7px, 0.8vw, 9px);
+        font-size: clamp(17px, 1.6vw, 20px);
+        margin-top: clamp(18px, 2vh, 24px);
+        margin-bottom: clamp(18px, 2vh, 24px);
+        width: clamp(142px, 15vw, 168px);
+    }
+}
+
+/* ===========================================
+   EXTRA LARGE MONITORS (1921px+)
+   Large monitors, 2K/4K
+=========================================== */
+@media (min-width: 1921px) {
+    .back-button {
+        top: clamp(20px, 1.8vh, 26px);
+        left: clamp(20px, 1.8vw, 26px);
+    }
+
+    .back-button a {
+        width: clamp(48px, 4.2vw, 56px);
+        height: clamp(48px, 4.2vw, 56px);
+        font-size: clamp(19px, 1.7vw, 22px);
+    }
+
+    .register-section {
+        padding: clamp(38px, 3.5vw, 46px);
+        max-width: clamp(570px, 45vw, 660px);
+        margin-top: clamp(132px, 13.5vh, 148px);
+        border-radius: clamp(14px, 1vw, 18px);
+    }
+
+    .register-section h1 {
+        font-size: clamp(47px, 3.7vw, 53px);
+        letter-spacing: clamp(9px, 0.7vw, 12px);
+        top: clamp(-96px, -9.5vh, -112px);
+    }
+
+    form {
+        gap: clamp(18px, 1.9vh, 22px);
+    }
+
+    .name-row {
+        gap: clamp(18px, 1.9vw, 22px);
+    }
+
+    label {
+        font-size: clamp(16px, 1.35vw, 18px);
+        margin-bottom: clamp(4px, 0.48vh, 6px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(15px, 1.4vh, 17px);
+        border-radius: clamp(8px, 0.75vw, 10px);
+        font-size: clamp(16px, 1.35vw, 18px);
+    }
+
+    button[type="submit"] {
+        padding: clamp(15px, 1.4vh, 17px) clamp(29px, 2.8vw, 35px);
+        border-radius: clamp(8px, 0.75vw, 10px);
+        font-size: clamp(18px, 1.5vw, 20px);
+        margin-top: clamp(19px, 1.9vh, 25px);
+        margin-bottom: clamp(19px, 1.9vh, 25px);
+        width: clamp(148px, 14vw, 172px);
+    }
+}
+
+/* ===========================================
+   ULTRA-WIDE (2560px+)
+   4K and larger
+=========================================== */
+@media (min-width: 2560px) {
+    .back-button {
+        top: clamp(22px, 1.7vh, 28px);
+        left: clamp(22px, 1.7vw, 28px);
+    }
+
+    .back-button a {
+        width: clamp(50px, 4vw, 58px);
+        height: clamp(50px, 4vw, 58px);
+        font-size: clamp(20px, 1.6vw, 23px);
+    }
+
+    .register-section {
+        padding: clamp(40px, 3.2vw, 48px);
+        max-width: clamp(600px, 42vw, 680px);
+        margin-top: clamp(138px, 13vh, 152px);
+        border-radius: clamp(15px, 0.95vw, 19px);
+    }
+
+    .register-section h1 {
+        font-size: clamp(50px, 3.5vw, 55px);
+        letter-spacing: clamp(10px, 0.65vw, 13px);
+        top: clamp(-100px, -9vh, -115px);
+    }
+
+    form {
+        gap: clamp(19px, 1.85vh, 23px);
+    }
+
+    .name-row {
+        gap: clamp(19px, 1.85vw, 23px);
+    }
+
+    label {
+        font-size: clamp(17px, 1.3vw, 19px);
+        margin-bottom: clamp(4px, 0.45vh, 6px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(16px, 1.35vh, 18px);
+        border-radius: clamp(8px, 0.7vw, 10px);
+        font-size: clamp(17px, 1.3vw, 19px);
+    }
+
+    button[type="submit"] {
+        padding: clamp(16px, 1.35vh, 18px) clamp(30px, 2.6vw, 36px);
+        border-radius: clamp(8px, 0.7vw, 10px);
+        font-size: clamp(19px, 1.45vw, 21px);
+        margin-top: clamp(20px, 1.85vh, 26px);
+        margin-bottom: clamp(20px, 1.85vh, 26px);
+        width: clamp(152px, 13vw, 175px);
+    }
+}
+/* ===========================================
+   DESKTOP BASE (768px and above)
+   Using flexible units for sizing only
+=========================================== */
+@media (min-width: 768px) {
+    /* Back button - responsive sizing and positioning */
+    .back-button {
+        top: clamp(15px, 2vh, 25px);
+        left: clamp(15px, 2vw, 25px);
+    }
+
+    .back-button a {
+        width: clamp(42px, 4.5vw, 55px);
+        height: clamp(42px, 4.5vw, 55px);
+        font-size: clamp(16px, 1.8vw, 22px);
+        /* Keeps original: background-color, color, border-radius, transition, box-shadow */
+    }
+
+    /* Register container - responsive padding */
+    .register-container {
+        padding: clamp(15px, 2vw, 25px);
+        /* Keeps original: display, justify-content, align-items, min-height, width, position */
+    }
+
+    /* Register section (white form box) - responsive sizing */
+    .register-section {
+        padding: clamp(30px, 4vw, 45px);
+        max-width: clamp(480px, 50vw, 650px);
+        padding-bottom: clamp(30px, 4vw, 45px);
+        margin-top: clamp(110px, 14vh, 150px);
+        border-radius: clamp(12px, 1.2vw, 18px);
+        /* Keeps original: background-color, box-shadow, width, margin (auto), position */
+    }
+
+    /* Register heading - responsive font and positioning */
+    .register-section h1 {
+        font-size: clamp(38px, 4.2vw, 52px);
+        letter-spacing: clamp(6px, 0.8vw, 12px);
+        top: clamp(-85px, -10vh, -110px);
+        /* Keeps original: text-align, color, font-weight, margin, position, transform, z-index, white-space, width */
+    }
+
+    /* Form - responsive gap */
+    form {
+        gap: clamp(15px, 2vh, 22px);
+        /* Keeps original: display, flex-direction */
+    }
+
+    /* Name row - responsive gap */
+    .name-row {
+        gap: clamp(15px, 2vw, 22px);
+        /* Keeps original: display */
+    }
+
+    /* Labels - responsive font size */
+    label {
+        font-size: clamp(14px, 1.4vw, 18px);
+        margin-bottom: clamp(3px, 0.5vh, 6px);
+        /* Keeps original: font-weight, color */
+    }
+
+    /* Input fields - responsive sizing */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(12px, 1.5vh, 17px);
+        border-width: clamp(1.5px, 0.15vw, 2.5px);
+        border-radius: clamp(6px, 0.8vw, 10px);
+        font-size: clamp(14px, 1.4vw, 18px);
+        /* Keeps original: border-style, border-color, transition, background-color */
+    }
+
+    /* Submit button - responsive sizing */
+    button[type="submit"] {
+        padding: clamp(12px, 1.5vh, 17px) clamp(25px, 3vw, 35px);
+        border-radius: clamp(6px, 0.8vw, 10px);
+        font-size: clamp(16px, 1.6vw, 20px);
+        margin-top: clamp(15px, 2vh, 25px);
+        margin-bottom: clamp(15px, 2vh, 25px);
+        width: clamp(130px, 15vw, 170px);
+        /* Keeps original: background-color, color, border, font-weight, cursor, transition, align-self */
+    }
+}
+
+/* ===========================================
+   SMALL LAPTOPS (768px - 1024px)
+   Adjust sizing for smaller screens
+=========================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .back-button {
+        top: clamp(14px, 2.2vh, 22px);
+        left: clamp(14px, 2.2vw, 22px);
+    }
+
+    .back-button a {
+        width: clamp(40px, 5vw, 50px);
+        height: clamp(40px, 5vw, 50px);
+        font-size: clamp(15px, 2vw, 20px);
+    }
+
+    .register-section {
+        padding: clamp(28px, 4.5vw, 40px);
+        max-width: clamp(440px, 55vw, 580px);
+        padding-bottom: clamp(28px, 4.5vw, 40px);
+        margin-top: clamp(105px, 15vh, 135px);
+        border-radius: clamp(11px, 1.3vw, 16px);
+    }
+
+    .register-section h1 {
+        font-size: clamp(34px, 4.8vw, 46px);
+        letter-spacing: clamp(5px, 0.9vw, 10px);
+        top: clamp(-78px, -11vh, -98px);
+    }
+
+    form {
+        gap: clamp(14px, 2.2vh, 20px);
+    }
+
+    .name-row {
+        gap: clamp(14px, 2.2vw, 20px);
+    }
+
+    label {
+        font-size: clamp(13px, 1.5vw, 17px);
+        margin-bottom: clamp(3px, 0.6vh, 5px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(11px, 1.7vh, 16px);
+        border-radius: clamp(6px, 0.9vw, 9px);
+        font-size: clamp(13px, 1.5vw, 17px);
+    }
+
+    button[type="submit"] {
+        padding: clamp(11px, 1.7vh, 16px) clamp(23px, 3.5vw, 33px);
+        border-radius: clamp(6px, 0.9vw, 9px);
+        font-size: clamp(15px, 1.8vw, 19px);
+        margin-top: clamp(14px, 2.2vh, 23px);
+        margin-bottom: clamp(14px, 2.2vh, 23px);
+        width: clamp(120px, 17vw, 155px);
+    }
+}
+
+/* ===========================================
+   MEDIUM LAPTOPS (1025px - 1366px)
+   Standard laptop sizes
+=========================================== */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .back-button {
+        top: clamp(16px, 2vh, 24px);
+        left: clamp(16px, 2vw, 24px);
+    }
+
+    .back-button a {
+        width: clamp(44px, 4.8vw, 53px);
+        height: clamp(44px, 4.8vw, 53px);
+        font-size: clamp(17px, 1.9vw, 21px);
+    }
+
+    .register-section {
+        padding: clamp(32px, 4.2vw, 42px);
+        max-width: clamp(500px, 52vw, 620px);
+        padding-bottom: clamp(32px, 4.2vw, 42px);
+        margin-top: clamp(115px, 14.5vh, 142px);
+        border-radius: clamp(12px, 1.2vw, 17px);
+    }
+
+    .register-section h1 {
+        font-size: clamp(40px, 4.5vw, 50px);
+        letter-spacing: clamp(7px, 0.85vw, 11px);
+        top: clamp(-88px, -10.5vh, -105px);
+    }
+
+    form {
+        gap: clamp(16px, 2.1vh, 21px);
+    }
+
+    .name-row {
+        gap: clamp(16px, 2.1vw, 21px);
+    }
+
+    label {
+        font-size: clamp(14px, 1.45vw, 17px);
+        margin-bottom: clamp(3px, 0.55vh, 5px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(13px, 1.6vh, 16px);
+        border-radius: clamp(7px, 0.85vw, 9px);
+        font-size: clamp(14px, 1.45vw, 17px);
+    }
+
+    button[type="submit"] {
+        padding: clamp(13px, 1.6vh, 16px) clamp(26px, 3.2vw, 34px);
+        border-radius: clamp(7px, 0.85vw, 9px);
+        font-size: clamp(17px, 1.7vw, 19px);
+        margin-top: clamp(16px, 2.1vh, 24px);
+        margin-bottom: clamp(16px, 2.1vh, 24px);
+        width: clamp(135px, 16vw, 162px);
+    }
+}
+
+/* ===========================================
+   LARGE LAPTOPS & MONITORS (1367px - 1920px)
+   Standard monitors
+=========================================== */
+@media (min-width: 1367px) and (max-width: 1920px) {
+    .back-button {
+        top: clamp(18px, 1.9vh, 25px);
+        left: clamp(18px, 1.9vw, 25px);
+    }
+
+    .back-button a {
+        width: clamp(46px, 4.5vw, 54px);
+        height: clamp(46px, 4.5vw, 54px);
+        font-size: clamp(18px, 1.8vw, 21px);
+    }
+
+    .register-section {
+        padding: clamp(35px, 3.8vw, 44px);
+        max-width: clamp(540px, 48vw, 640px);
+        padding-bottom: clamp(35px, 3.8vw, 44px);
+        margin-top: clamp(125px, 14vh, 145px);
+        border-radius: clamp(13px, 1.1vw, 17px);
+    }
+
+    .register-section h1 {
+        font-size: clamp(44px, 4vw, 51px);
+        letter-spacing: clamp(8px, 0.75vw, 11px);
+        top: clamp(-92px, -10vh, -108px);
+    }
+
+    form {
+        gap: clamp(17px, 2vh, 21px);
+    }
+
+    .name-row {
+        gap: clamp(17px, 2vw, 21px);
+    }
+
+    label {
+        font-size: clamp(15px, 1.4vw, 18px);
+        margin-bottom: clamp(4px, 0.5vh, 6px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(14px, 1.5vh, 17px);
+        border-radius: clamp(7px, 0.8vw, 9px);
+        font-size: clamp(15px, 1.4vw, 18px);
+    }
+
+    button[type="submit"] {
+        padding: clamp(14px, 1.5vh, 17px) clamp(28px, 3vw, 34px);
+        border-radius: clamp(7px, 0.8vw, 9px);
+        font-size: clamp(17px, 1.6vw, 20px);
+        margin-top: clamp(18px, 2vh, 24px);
+        margin-bottom: clamp(18px, 2vh, 24px);
+        width: clamp(142px, 15vw, 168px);
+    }
+}
+
+/* ===========================================
+   EXTRA LARGE MONITORS (1921px+)
+   Large monitors, 2K/4K
+=========================================== */
+@media (min-width: 1921px) {
+    .back-button {
+        top: clamp(20px, 1.8vh, 26px);
+        left: clamp(20px, 1.8vw, 26px);
+    }
+
+    .back-button a {
+        width: clamp(48px, 4.2vw, 56px);
+        height: clamp(48px, 4.2vw, 56px);
+        font-size: clamp(19px, 1.7vw, 22px);
+    }
+
+    .register-section {
+        padding: clamp(38px, 3.5vw, 46px);
+        max-width: clamp(570px, 45vw, 660px);
+        padding-bottom: clamp(38px, 3.5vw, 46px);
+        margin-top: clamp(132px, 13.5vh, 148px);
+        border-radius: clamp(14px, 1vw, 18px);
+    }
+
+    .register-section h1 {
+        font-size: clamp(47px, 3.7vw, 53px);
+        letter-spacing: clamp(9px, 0.7vw, 12px);
+        top: clamp(-96px, -9.5vh, -112px);
+    }
+
+    form {
+        gap: clamp(18px, 1.9vh, 22px);
+    }
+
+    .name-row {
+        gap: clamp(18px, 1.9vw, 22px);
+    }
+
+    label {
+        font-size: clamp(16px, 1.35vw, 18px);
+        margin-bottom: clamp(4px, 0.48vh, 6px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(15px, 1.4vh, 17px);
+        border-radius: clamp(8px, 0.75vw, 10px);
+        font-size: clamp(16px, 1.35vw, 18px);
+    }
+
+    button[type="submit"] {
+        padding: clamp(15px, 1.4vh, 17px) clamp(29px, 2.8vw, 35px);
+        border-radius: clamp(8px, 0.75vw, 10px);
+        font-size: clamp(18px, 1.5vw, 20px);
+        margin-top: clamp(19px, 1.9vh, 25px);
+        margin-bottom: clamp(19px, 1.9vh, 25px);
+        width: clamp(148px, 14vw, 172px);
+    }
+}
+
+/* ===========================================
+   ULTRA-WIDE (2560px+)
+   4K and larger
+=========================================== */
+@media (min-width: 2560px) {
+    .back-button {
+        top: clamp(22px, 1.7vh, 28px);
+        left: clamp(22px, 1.7vw, 28px);
+    }
+
+    .back-button a {
+        width: clamp(50px, 4vw, 58px);
+        height: clamp(50px, 4vw, 58px);
+        font-size: clamp(20px, 1.6vw, 23px);
+    }
+
+    .register-section {
+        padding: clamp(40px, 3.2vw, 48px);
+        max-width: clamp(600px, 42vw, 680px);
+        padding-bottom: clamp(40px, 3.2vw, 48px);
+        margin-top: clamp(138px, 13vh, 152px);
+        border-radius: clamp(15px, 0.95vw, 19px);
+    }
+
+    .register-section h1 {
+        font-size: clamp(50px, 3.5vw, 55px);
+        letter-spacing: clamp(10px, 0.65vw, 13px);
+        top: clamp(-100px, -9vh, -115px);
+    }
+
+    form {
+        gap: clamp(19px, 1.85vh, 23px);
+    }
+
+    .name-row {
+        gap: clamp(19px, 1.85vw, 23px);
+    }
+
+    label {
+        font-size: clamp(17px, 1.3vw, 19px);
+        margin-bottom: clamp(4px, 0.45vh, 6px);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: clamp(16px, 1.35vh, 18px);
+        border-radius: clamp(8px, 0.7vw, 10px);
+        font-size: clamp(17px, 1.3vw, 19px);
+    }
+
+    button[type="submit"] {
+        padding: clamp(16px, 1.35vh, 18px) clamp(30px, 2.6vw, 36px);
+        border-radius: clamp(8px, 0.7vw, 10px);
+        font-size: clamp(19px, 1.45vw, 21px);
+        margin-top: clamp(20px, 1.85vh, 26px);
+        margin-bottom: clamp(20px, 1.85vh, 26px);
+        width: clamp(152px, 13vw, 175px);
+    }
+}

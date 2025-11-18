@@ -1,0 +1,710 @@
+/* ========== USER DROPDOWN ========== */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.dropdown-content.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-header {
+    background-color: #0044cc;
+    padding: 25px 15px;
+    text-align: center;
+    color: white;
+}
+
+.dropdown-profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #0044cc;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-user-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dropdown-user-email {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.dropdown-body {
+    padding: 10px;
+}
+
+.dropdown-logout-btn {
+    width: 100%;
+    padding: 6px 10px !important;
+    background-color: white !important;
+    color: #333 !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px;
+    font-size: 13px !important;
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.3s;
+    margin: 0;
+}
+
+.dropdown-logout-btn:hover {
+    background-color: #0044cc !important;
+    color: white !important;
+    border-color: #0044cc !important;
+}
+
+.dropdown-logout-btn i {
+    font-size: 20px;
+}
+
+/* ========== LOGOUT MODAL ========== */
+#logoutModal.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+#logoutModal.modal.show {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* ===================== */
+/* 📱 MOBILE + TABLET RESPONSIVENESS */
+/* ===================== */
+
+/* ✅ Small Devices (phones up to 600px) */
+@media (max-width: 600px) {
+  #logoutModal .modal-content {
+    max-width: 90%;
+    padding: 25px 18px;
+    border-radius: 10px;
+  }
+
+  #logoutModal .modal-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 40px;
+  }
+
+  #logoutModal .modal-content h2 {
+    font-size: 22px;
+  }
+
+  #logoutModal .modal-content p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  #logoutModal .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #logoutModal .modal-btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+  }
+}
+
+/* ✅ Medium Devices (601px–768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+  #logoutModal .modal-content {
+    max-width: 85%;
+    padding: 30px 22px;
+  }
+
+  #logoutModal .modal-icon {
+    width: 75px;
+    height: 75px;
+    font-size: 45px;
+  }
+
+  #logoutModal .modal-content h2 {
+    font-size: 24px;
+  }
+
+  #logoutModal .modal-content p {
+    font-size: 15px;
+  }
+
+  #logoutModal .modal-btn {
+    padding: 11px 35px;
+    font-size: 15px;
+  }
+}
+
+/* ✅ Large Mobile / Small Tablet (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #logoutModal .modal-content {
+    max-width: 70%;
+    padding: 35px 25px;
+  }
+
+  #logoutModal .modal-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 48px;
+  }
+
+  #logoutModal .modal-content h2 {
+    font-size: 26px;
+  }
+
+  #logoutModal .modal-content p {
+    font-size: 15px;
+  }
+
+  #logoutModal .modal-btn {
+    padding: 12px 38px;
+    font-size: 16px;
+  }
+}
+
+/* ✅ Mobile Medium (max-width: 425px) */
+@media (max-width: 425px) {
+    #logoutModal .modal-content {
+        padding: 25px 18px;
+        max-width: 88%;
+    }
+
+    #logoutModal .modal-content h2 {
+        font-size: 22px;
+    }
+
+    #logoutModal .modal-content p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    #logoutModal .modal-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 40px;
+    }
+
+    #logoutModal .modal-btn {
+        font-size: 14px;
+        padding: 8px 25px;
+        min-width: 95px;
+    }
+}
+
+/* ✅ Mobile Small (max-width: 375px) */
+@media (max-width: 375px) {
+    #logoutModal .modal-content {
+        padding: 20px 15px;
+        max-width: 90%;
+    }
+
+    #logoutModal .modal-content h2 {
+        font-size: 20px;
+    }
+
+    #logoutModal .modal-content p {
+        font-size: 13px;
+    }
+
+    #logoutModal .modal-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 35px;
+    }
+
+    #logoutModal .modal-btn {
+        font-size: 13px;
+        padding: 8px 20px;
+        min-width: 85px;
+    }
+
+    #logoutModal .modal-buttons {
+        gap: 10px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #logoutModal .modal-btn {
+        width: 100%;
+    }
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+    width: 300px;
+    background-color: #e4e4e4;
+    padding-top: 50px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.nav-item {
+    display: block;
+    padding: 20px 25px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-item:hover {
+    background-color: #d4d4d4;
+}
+
+.nav-item.active {
+    background-color: #001d9e;
+    color: white;
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-content {
+    margin-left: 300px;
+    margin-top: 60px;
+    padding: 0;
+    overflow-y: auto;
+    width: calc(100% - 300px);
+    height: calc(100vh - 60px);
+}
+
+/* ========== HEADER ========== */
+.fixed-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.page-header {
+    background-color: #001d9e;
+    color: white;
+    padding: 1px 10px;
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+    width: 15%;
+    height: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.page-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* ========== SETTINGS CONTENT ========== */
+.settings-container {
+    padding: 30px;
+    max-width: 1200px;
+}
+
+.settings-section {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.settings-section h3 {
+    color: #001d9e;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0044cc;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #0044cc;
+    box-shadow: 0 0 0 3px rgba(0, 68, 204, 0.1);
+}
+
+.btn-primary {
+    background-color: #0044cc;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #001d9e;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* ========== TOGGLE SWITCH ========== */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.toggle-container:last-child {
+    border-bottom: none;
+}
+
+.toggle-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle-label strong {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.toggle-label span {
+    color: #666;
+    font-size: 14px;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #0044cc;
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+/* ========== THEME OPTIONS ========== */
+.theme-options {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.theme-option {
+    flex: 1;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.theme-option:hover {
+    border-color: #0044cc;
+}
+
+.theme-option.active {
+    border-color: #0044cc;
+    background-color: #f0f7ff;
+}
+
+.theme-option i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.theme-option.light i {
+    color: #ffd700;
+}
+
+.theme-option.dark i {
+    color: #1a1a1a;
+}
+
+/* ========== ABOUT US ========== */
+.about-content {
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+.version-info {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.version-info p {
+    margin: 5px 0;
+    color: #333;
+}
+
+/* ========== SUCCESS MESSAGE ========== */
+.success-message {
+    display: none;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+}
+
+.success-message.show {
+    display: block;
+}
+
+
+/* ===== Modal Box ===== */
+#logoutModal .modal-content {
+    background-color: white !important;
+    padding: 35px 25px 30px 25px !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    min-height: 270px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+    animation: slideUp 0.3s ease !important;
+    box-sizing: border-box !important;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+#logoutModal .modal-icon {
+    width: 80px !important;
+    height: 80px !important;
+    background-color: #ffc107 !important;
+    border-radius: 50% !important;
+    margin: 0 auto 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 50px !important;
+    color: white !important;
+}
+
+#logoutModal .modal-content h2 {
+    margin: 0 0 12px 0 !important;
+    color: #333 !important;
+    font-size: 28px !important;
+    font-weight: bold !important;
+}
+
+#logoutModal .modal-content p {
+    margin: 0 0 30px 0 !important;
+    color: #666 !important;
+    font-size: 16px !important;
+}
+
+#logoutModal .modal-buttons {
+    display: flex !important;
+    gap: 15px !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+}
+
+#logoutModal .modal-btn {
+    padding: 12px 40px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: all 0.3s !important;
+    min-width: 120px !important;
+}
+
+#logoutModal .modal-btn-yes {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+#logoutModal .modal-btn-yes:hover {
+    background-color: #c82333 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3) !important;
+}
+
+#logoutModal .modal-btn-no {
+    background-color: #6c757d !important;
+    color: white !important;
+}
+
+#logoutModal .modal-btn-no:hover {
+    background-color: #5a6268 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3) !important;
+}
+
+/* ===================== */
+/* 📱 RESPONSIVE (Below 767px only) */
+/* ===================== */
+@media (max-width: 767px) {
+    #logoutModal .modal-content {
+        max-width: 80% !important;
+        padding: 28px 20px !important;
+        border-radius: 10px !important;
+    }
+
+    #logoutModal .modal-icon {
+        width: 65px !important;
+        height: 65px !important;
+        font-size: 40px !important;
+        margin-bottom: 15px !important;
+    }
+
+    #logoutModal .modal-content h2 {
+        font-size: 22px !important;
+    }
+
+    #logoutModal .modal-content p {
+        font-size: 14px !important;
+        margin-bottom: 25px !important;
+    }
+
+    #logoutModal .modal-buttons {
+        gap: 10px !important;
+        width: 50% !important;
+    }
+
+    #logoutModal .modal-btn {
+        width: 100% !important;
+        font-size: 15px !important;
+        padding: 10px 0 !important;
+    }
+}

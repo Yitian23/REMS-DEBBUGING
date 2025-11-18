@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/v4-shims.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/estimation.css" />
+    <link rel="stylesheet" href="css/setting.css" />
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>Estimation | Price Estimation</title>
+</head>
+<body>
+     <!-- Top Navigation -->
+ <div class="top-nav">
+        <button class="hamburger-menu" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <h1>
+            <span class="logo"></span>
+            Price Estimation
+        </h1>
+        <div class="top-nav-icons">
+            <a href="setting.html">
+            <button class="icon-btn"><i class="fas fa-cog"></i></button></a>
+            <div class="user-dropdown">
+                <button class="icon-btn" onclick="toggleUserDropdown()">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="dropdown-content" id="userDropdown">
+                    <div class="dropdown-header">
+                        <div class="dropdown-profile-pic">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="dropdown-user-name">Loading...</div>
+                        <div class="dropdown-user-email">Loading...</div>
+                    </div>
+                    <div class="dropdown-body">
+                        <button class="dropdown-logout-btn" onclick="showLogoutModal()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Log out User
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <h2>Confirm Logout</h2>
+            <p>Are you sure you want to log out?</p>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-yes" onclick="confirmLogout()">Yes</button>
+                <button class="modal-btn modal-btn-no" onclick="closeLogoutModal()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="dashboard.html" class="nav-item">Dashboard</a>
+        <a href="management.html" class="nav-item">Management</a>
+        <a href="task.html" class="nav-item">Tasks</a>
+        <a href="report.html" class="nav-item">Report</a>
+        <a href="estimation.html" class="nav-item active">Estimation</a>
+        <a href="profile.html" class="nav-item">Profile</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Fixed Header Section -->
+        <div class="fixed-header">
+            <div class="page-header">
+                <h2>Price Estimation</h2>
+            </div>
+        </div>
+        
+        <!-- Estimation Container -->
+        <div class="estimation-container">
+            <!-- Form Page (Initial View) -->
+            <div id="form-page" class="form-page">
+                <!-- Property Information Input Form -->
+                <div class="property-form-box">
+                    <h3>Property Information</h3>
+                    
+                    <!-- Search Bar Container -->
+                    <div class="search-container">
+                        <div class="search-field-wrapper">
+                            <div class="search-input-container">
+                                <input type="text" id="propertySearch" placeholder="Search by owner name, address, or email..." autocomplete="off">
+                                <i class="fas fa-search search-icon-inner"></i>
+                            </div>
+                            <!-- Search dropdown will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Property Details Preview (Hidden by default) -->
+                    <div id="propertyDetailsContainer" class="property-details-preview" style="display: none;">
+                        <!-- Content will be inserted by JavaScript -->
+                    </div>
+                    
+                    <!-- Form Grid -->
+                    <div class="form-grid" id="propertyFormGrid">
+                        <div class="form-field">
+                            <label for="name">Name</label>
+                            <span class="field-value" id="name-display">: ---</span>
+                        </div>
+                        <div class="form-field">
+                            <label for="barangay">Barangay</label>
+                            <span class="field-value" id="barangay-display">: ---</span>
+                        </div>
+                        <div class="form-field">
+                            <label for="street">Street</label>
+                            <span class="field-value" id="street-display">: ---</span>
+                        </div>
+                        <div class="form-field">
+                            <label for="property-size">Property size</label>
+                            <span class="field-value" id="size-display">: ---</span>
+                        </div>
+                        <div class="form-field">
+                            <label for="current-price">Current price</label>
+                            <span class="field-value" id="price-display">: ---</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Hidden inputs to store actual values -->
+                    <input type="hidden" id="name">
+                    <input type="hidden" id="barangay">
+                    <input type="hidden" id="street">
+                    <input type="hidden" id="property-size">
+                    <input type="hidden" id="current-price">
+                    <input type="hidden" id="property-type">
+                    <input type="hidden" id="property-class">
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button class="btn-clear" onclick="clearForm()">Clear</button>
+                    <button class="btn-estimate" onclick="performEstimation()">Estimate 2026 Price</button>
+                </div>
+            </div>
+
+            <!-- Results Section (Hidden by default) -->
+            <div id="results-section" class="results-section">
+                <!-- Chart and Metrics Container -->
+                <div class="results-container">
+                    <!-- Price History Chart -->
+                    <div class="chart-container">
+                        <div class="chart-header">Price History</div>
+                        <div class="chart-content">
+                            <div class="price-chart">
+                                <canvas id="priceChart"></canvas>
+                            </div>
+                            <!-- Year Labels -->
+                            <div class="year-labels">
+                                <span>2021</span>
+                                <span>2022</span>
+                                <span>2023</span>
+                                <span>2024</span>
+                                <span>2025</span>
+                                <span style="color: #ff4444; font-weight: bold;">2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Metrics Panel -->
+                    <div class="metrics-container">
+                        <div class="metric-box">
+                            <div class="metric-label">Current Price:</div>
+                            <div class="metric-value" id="current-price-display">₱ 0</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-label">Estimated Price:</div>
+                            <div class="metric-value" id="estimated-price-display">₱ 0</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-label">Price Projection:</div>
+                            <div class="metric-value" id="profit-projection-display">₱ 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Info Section -->
+                <div class="property-section">
+                    <div class="property-info-container">
+                        <div class="property-header">Property Information</div>
+                        <div class="property-content">
+                            <div class="property-grid">
+                                <div class="property-item">
+                                    <span class="property-label">Name</span>
+                                    <span class="property-value" id="info-name">: ---</span>
+                                </div>
+                                <div class="property-item">
+                                    <span class="property-label">Address</span>
+                                    <span class="property-value" id="info-address">: ---</span>
+                                </div>
+                                <div class="property-item">
+                                    <span class="property-label">Property Size</span>
+                                    <span class="property-value" id="info-size">: ---</span>
+                                </div>
+                                <div class="property-item">
+                                    <span class="property-label">Current Price / sqm</span>
+                                    <span class="property-value" id="current-price-sqm">: ---</span>
+                                </div>
+                                <div class="property-item">
+                                    <span class="property-label">2026 Price / sqm</span>
+                                    <span class="property-value" id="price-2026">: ---</span>
+                                </div>
+                                <div class="property-item">
+                                    <span class="property-label">2025 Price / sqm</span>
+                                    <span class="property-value" id="price-2025">: ₱100</span>
+                                </div>
+                                <div class="property-item">
+                                    <span class="property-label">2024 Price / sqm</span>
+                                    <span class="property-value" id="price-2024">: ₱85</span>
+                                </div>
+                                <div class="property-item">
+                                    <span class="property-label">2023 Price / sqm</span>
+                                    <span class="property-value" id="price-2023">: ₱73</span>
+                                </div>
+                                <div class="property-item">
+                                    <span class="property-label">2022 Price / sqm</span>
+                                    <span class="property-value" id="price-2022">: ₱61</span>
+                                </div>
+                                <div class="property-item">
+                                    <span class="property-label">2021 Price / sqm</span>
+                                    <span class="property-value" id="price-2021">: ₱52</span>
+                                </div>
+                                <div class="property-item">
+                                    <span class="property-label">2020 Price / sqm</span>
+                                    <span class="property-value" id="price-2020">: ₱45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn-clear" onclick="clearResults()">Clear</button>
+                        <button class="btn-download" onclick="downloadReport()">Download</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Include Chart.js for better chart rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script/setting.js"></script>
+    <script src="script/estimation.js"></script>
+    <script src="auth_guard.js"></script>
+    <script src="script/mobile.js"></script>
+</body>
+</html>

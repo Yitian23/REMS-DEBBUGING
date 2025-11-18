@@ -1,0 +1,252 @@
+    /* ===========================================
+            LOGIN PAGE STYLES
+   =========================================== */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* Container for logo and text */
+    .logo-container {
+        position: fixed;          /* Fixes the logo at the top of page */
+        top: 0;                   /* Zero distance from top edge */
+        left: 0;                  /* Zero distance from left edge */
+        display: flex;            /* Put image and text side by side */
+        align-items: center;      /* Vertically center logo and text */
+        padding: 10px;           /* Add some padding around logo */
+        background-color: white;  /* White background for visibility */
+        z-index: 999;            /* Stay above all other content */
+    }
+
+    /* Logo image styling */
+    .logo-container img {
+        height: 40px;              /* Set height for proportional size */
+        width: auto;               /* Maintain aspect ratio */
+        margin-right: 10px;        /* Add space between logo and text */
+        object-fit: contain;       /* Ensure image fits without stretching */
+        color: #0044cc;           /* Blue color for logo */
+    }
+
+    /* Logo text styling */
+    .logo-container span {
+        font-size: 30px;          /* Large text size */
+        color: #0044cc;           /* Blue color matching logo */
+        font-weight: bold;        /* Make text bold */
+    }
+
+    /* Main container for login page */
+    .login-container {
+        display: flex;            /* Split page into two sections */
+        height: 100vh;            /* Full viewport height */
+        width: 100vw;             /* Full viewport width */
+        overflow: hidden;         /* Prevent scrolling */
+    }
+
+    /* Left section containing login form */
+    .login-section {
+        width: 50%;               /* Take up half the screen */
+        padding: 40px;            /* Add padding inside section */
+        display: flex;            /* Use flexbox for centering */
+        flex-direction: column;   /* Stack items vertically */
+        justify-content: center;  /* Center items vertically */
+        align-items: center;      /* Center items horizontally */
+        background-color: #fff;   /* White background */
+    }
+
+    /* Logo image in login section */
+    .login-section img {
+        width: 150px;             /* Set specific width for logo */
+        margin-bottom: 20px;      /* Space below logo */
+    }
+
+    /* Paragraph text in login section */
+    .login-section p {
+        margin-bottom: 20px;      /* Space below paragraph */
+        font-size: 25px;          /* Large text size */
+        color: #0011ff;           /* Blue color for text */
+    }
+
+    /* Main heading in login section */
+    .login-section h1 {
+        margin-bottom: 50px;      /* Large space below heading */
+        font-size: 60px;          /* Very large text size */
+        color: #000000;           /* Blue color for heading */
+        text-align: center;       /* Center the heading */
+    }
+
+    /* Container for form labels and inputs */
+    .label-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center labels and inputs horizontally */
+      padding-bottom: 15px;
+      width: 100%;
+    }
+
+    /* Input fields in login form */
+    .label-container input {
+      width: 100%;
+      max-width: 400px;        /* Prevents full width stretching */
+      font-size: 20px;
+      padding: 10px;
+      margin-bottom: 15px;
+      background-color: #f9f9f9; /* Light gray background */
+      transition: border-color 0.3s ease; /* Smooth border transition */
+      color: #000000;
+      border-radius: 5px;
+      border: 2px solid #ccc;
+      box-sizing: border-box;
+      height: 60px;
+    }
+
+    /* Labels for input fields */
+    .label-container label {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 1px;
+      text-align: left;
+      width: 100%;
+      max-width: 400px;
+    }
+    .label-container label:hover {
+      color: #0044cc;
+    }
+    /* Individual buttons in login section */
+    .login-section button {
+        width: 20%;               /* Set button width */
+        height: 50px;             /* Set button height */
+        font-size: 20px;          /* Large text size */
+        padding: 10px;            /* Padding inside button */
+        background-color: #0044cc; /* Blue background */
+        color: white;             /* White text */
+        border: none;             /* Remove default border */
+        border-radius: 5px;       /* Rounded corners */
+        cursor: pointer;          /* Show pointer on hover */
+    }
+
+    /* Hover effect for individual buttons */
+    .login-section button:hover {
+        background-color: #001d9e; /* Darker blue on hover */
+    }
+
+    /* Container for multiple buttons */
+    .button-group {
+      display: flex;              /* Arrange buttons horizontally */
+      width: 40%;                 /* Set container width */
+      gap: 100px;                 /* Add space between buttons */
+      padding-top: 30px;          /* Add top padding */
+    }
+
+    /* Buttons within button group */
+    .button-group button {
+      flex: 1;                    /* Make both buttons equal width */
+      padding: 10px;              /* Padding inside buttons */
+      background-color: #0044cc;  /* Blue background */
+      color: white;               /* White text */
+      border: none;               /* Remove default border */
+      border-radius: 5px;         /* Rounded corners */
+      cursor: pointer;            /* Show pointer on hover */
+      transition: transform 0.3s ease; /* Smooth hover transition */
+    }
+
+    /* Hover effect for button group buttons */
+    .button-group button:hover {
+      background-color: #001d9e; /* Lighter blue on hover */
+    }
+
+    /* Right section with background image */
+    .image-section {
+        width: 50%;               /* Take up half the screen */
+        background-image: url('../assets/login-bg.png'); /* Background image */
+        background-size: cover;    /* Cover entire section */
+        background-position: center; /* Center the image */
+    }
+/* ===========================================
+   MOBILE VIEW (≤767px)
+   Background + Logo Fix (No Scroll, No Resize Issue)
+=========================================== */
+/* ===========================================
+   LOGIN PAGE - MOBILE BACKGROUND
+   Applies ONLY if <body class="login-page">
+=========================================== */
+@media (max-width: 767px) {
+  body.login-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: url('../assets/login-bg.png') center center / cover no-repeat !important;
+  }
+
+  body.login-page::before {
+    content: '' !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+    background: url('../assets/login-bg.png') center center / cover no-repeat !important;
+  }
+
+    /* Logo section */
+    .logo-container {
+        position: fixed !important;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        background: transparent !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo-container img {
+        content: url('../assets/reverse-logo-removebg-preview.png') !important;
+        height: 45px;
+        width: auto;
+        filter: brightness(0) invert(1);
+        margin-right: 10px;
+    }
+
+    .logo-container span {
+        color: #ffffff !important;
+        font-size: clamp(22px, 6vw, 28px);
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Centered form box */
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        z-index: 2;
+    }
+
+    .login-section {
+        background: rgba(255, 255, 255, 0.93);
+        padding: 35px 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        width: 90%;
+        max-width: 400px;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Hide right-side background panel */
+    .image-section {
+        display: none !important;
+    }
+}

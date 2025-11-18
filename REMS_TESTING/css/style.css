@@ -1,0 +1,115 @@
+html {
+            overflow: hidden;      /* Prevents scrollbars on html element */
+            height: 100%;          /* Full height */
+            width: 100%;           /* Full width */
+        }
+
+ body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background-color: #0044cc;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+            z-index: 1000;
+        }
+
+        .top-nav h1 {
+            display: flex;
+            align-items: center;
+            font-size: 25px;
+            gap: 10px;
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+            background: url('../assets/reverse-logo-removebg-preview.png') no-repeat center center;
+            background-size: contain;
+            display: inline-block;
+        }
+
+        .top-nav-icons button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            margin-left: 1px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: #e4e4e4;
+            padding-top: 50px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 20px 25px;
+            text-decoration: none;
+            color: black;
+            border-bottom: 1px solid #ccc;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-item.active {
+            background-color: #001d9e;
+            color: white;
+        }
+        .main-content {
+            margin-left: 300px;
+            margin-top: 50px;
+            padding: 0;
+            width: calc(100% - 300px);
+            height: calc(100vh - 50px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ---------- FIXED HEADER SECTION ---------- */
+        .fixed-header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 100;
+            padding: 10px 10px 5px 10px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 0;
+        }
+
+        .page-header {
+            background-color: #001d9e;
+            color: white;
+            padding: 1px 10px;
+            clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+            width: 15%;
+            height: 40px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }

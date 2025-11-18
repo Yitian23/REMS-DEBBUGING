@@ -1,0 +1,186 @@
+/*dashboard style*/
+/* ---------- STATS ---------- */
+.stats-container {
+    background: url('../assets/register-bg.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 18px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    margin: 18px 20px 30px 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.stat-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.stat-item:active {
+    transform: translateY(-2px) scale(1.0);
+}
+
+.stat-item .stat-number {
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 50px;
+}
+
+.stat-item .stat-label {
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+/* Click indicator for stat items */
+.stat-item::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.stat-item:hover::after {
+    width: 60%;
+}
+
+/* ---------- TASKS ---------- */
+.tasks-section h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.tasks-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.task-card {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 20px 25px;
+    flex: 1;
+    min-width: 220px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    margin: 18px 30px 30px 30px;
+}
+
+.task-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.task-badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.task-list {
+    list-style: decimal;
+    padding-left: 20px;
+}
+
+.task-list li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+.task-list li:hover {
+    color: #0019de;
+    cursor: pointer;
+}
+/* Priority indicator styling */
+.task-list li .priority-indicator {
+    display: inline-block;
+    width: 12px; /* Increased from 8px */
+    height: 12px; /* Increased from 8px */
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle; /* Better centering */
+    position: relative;
+    top: -1px; /* Fine-tune vertical alignment */
+}
+.top-nav-icons button {
+    font-size: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-item .stat-number {
+        font-size: 40px;
+        padding-top: 30px;
+    }
+    
+    .stat-item .stat-label {
+        font-size: 20px;
+    }
+    
+    .tasks-grid {
+        flex-direction: column;
+    }
+    
+    .task-card {
+        margin: 10px 20px;
+        min-width: auto;
+    }
+    
+    .task-header {
+        font-size: 18px;
+    }
+    
+    .task-badge {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+}

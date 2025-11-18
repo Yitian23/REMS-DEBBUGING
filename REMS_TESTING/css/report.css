@@ -1,0 +1,493 @@
+
+        /* ---------- DOWNLOAD BUTTON ---------- */
+        .download-container {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -40px;
+            padding-right: 20px;
+        }
+
+        .download-btn {
+            background-color: #001d9e;
+            color: white;
+            border: none;
+            margin-top: 55px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            min-width: 120px;
+        }
+
+        .download-btn:hover {
+            background-color: #0033aa;
+        }
+
+        /* ---------- REPORT COLUMNS CONTAINER ---------- */
+        .report-columns-container {
+            padding: 13px 20px 20px;
+        }
+
+        .report-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-auto-rows: 1fr;
+            align-items: stretch;
+        }
+
+        /* ---------- REPORT COLUMN ---------- */
+        .report-column {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 500px;
+            border-radius: 8px;
+            overflow: visible;
+        }
+
+        .column-header {
+            background-color: #001d9e;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: #000000 1px solid;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ---------- REPORT ITEMS ---------- */
+        .report-item {
+            margin: 10px;
+            padding: 25px 25px;
+            margin-top: 5px;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-height: 140px;
+            box-sizing: border-box;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .report-item:hover {
+            transform: scale(0.98);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .client-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        .report-type {
+            color: #666;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .client-address {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #001d9e;
+        }
+
+        .report-date {
+            color: #666;
+            font-size: 14px;
+        }
+        /* ===========================================
+   REPORT PAGE - MOBILE STYLES
+=========================================== */
+
+/* Mobile S & M (320px - 424px) */
+@media (max-width: 424px) {
+    /* Download Button - Floating circular button, icon only */
+    .download-container {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 100 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .download-btn {
+        background-color: #001d9e !important;
+        color: white !important;
+        border: none !important;
+        padding: 0 !important;
+        width: 56px !important;
+        height: 56px !important;
+        border-radius: 50% !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+        transition: all 0.3s ease !important;
+        font-size: 0 !important;
+        min-width: auto !important;
+        gap: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .download-btn i {
+        font-size: 24px !important;
+    }
+
+    .download-btn:hover {
+        background-color: #0019de !important;
+        transform: scale(1.1) !important;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .download-btn:active {
+        transform: scale(0.95) !important;
+    }
+
+    /* Report Columns Container */
+    .report-columns-container {
+        padding: 15px !important;
+    }
+
+    .report-columns {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        grid-template-columns: none !important;
+    }
+
+    /* Each Status Section */
+    .report-column {
+        background-color: transparent !important;
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: auto !important;
+        border-radius: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Column Header - Scrolls vertically (NOT sticky) */
+    .report-column .column-header {
+        background-color: #001d9e !important;
+        color: white !important;
+        padding: 12px 15px !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        position: relative !important;
+        top: auto !important;
+        z-index: 10 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        border: none !important;
+        border-radius: 8px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .notification-badge {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        background-color: #dc3545 !important;
+        color: white !important;
+        border-radius: 50% !important;
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 700 !important;
+    }
+
+    /* Horizontal Scrollable Cards Container */
+    .report-column > div:not(.column-header) {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 12px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding: 0 0 10px 0 !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-snap-type: x mandatory !important;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .report-column > div:not(.column-header)::-webkit-scrollbar {
+        height: 0px !important;
+    }
+
+    /* Individual Report Card */
+    .report-item {
+        flex: 0 0 280px !important;
+        min-width: 280px !important;
+        max-width: 280px !important;
+        margin: 0 !important;
+        padding: 15px !important;
+        border: 2px solid #333 !important;
+        border-radius: 8px !important;
+        background-color: white !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        min-height: 140px !important;
+        box-sizing: border-box !important;
+        scroll-snap-align: start !important;
+    }
+
+    .report-item:hover {
+        transform: none !important;
+    }
+
+    .client-name {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        color: #333 !important;
+        line-height: 1.3 !important;
+        margin-bottom: 4px !important;
+    }
+
+    .report-type {
+        color: #666 !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+    }
+
+    .client-address {
+        color: #666 !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+
+    .price {
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        color: #001d9e !important;
+        margin-top: 4px !important;
+    }
+
+    .report-date {
+        color: #999 !important;
+        font-size: 12px !important;
+        margin-top: 2px !important;
+    }
+}
+
+/* Mobile M - 375px to 424px */
+@media (min-width: 375px) and (max-width: 424px) {
+    .report-item {
+        flex: 0 0 300px !important;
+        min-width: 300px !important;
+        max-width: 300px !important;
+    }
+}
+
+/* Mobile L - 425px to 767px */
+@media (min-width: 425px) and (max-width: 767px) {
+    /* Download Button - Larger floating button */
+    .download-container {
+        position: fixed !important;
+        bottom: 24px !important;
+        right: 24px !important;
+        z-index: 100 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .download-btn {
+        background-color: #001d9e !important;
+        color: white !important;
+        border: none !important;
+        padding: 0 !important;
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 50% !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+        transition: all 0.3s ease !important;
+        font-size: 0 !important;
+        min-width: auto !important;
+        gap: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .download-btn i {
+        font-size: 26px !important;
+    }
+
+    .download-btn:hover {
+        background-color: #0019de !important;
+        transform: scale(1.1) !important;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .download-btn:active {
+        transform: scale(0.95) !important;
+    }
+
+    /* Report Columns Container */
+    .report-columns-container {
+        padding: 18px !important;
+    }
+
+    .report-columns {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        grid-template-columns: none !important;
+    }
+
+    /* Each Status Section */
+    .report-column {
+        background-color: transparent !important;
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: auto !important;
+        border-radius: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Column Header - Scrolls vertically (NOT sticky) */
+    .report-column .column-header {
+        background-color: #001d9e !important;
+        color: white !important;
+        padding: 14px 18px !important;
+        font-size: 17px !important;
+        font-weight: 600 !important;
+        position: relative !important;
+        top: auto !important;
+        z-index: 10 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        border: none !important;
+        border-radius: 8px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .notification-badge {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        background-color: #dc3545 !important;
+        color: white !important;
+        border-radius: 50% !important;
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 13px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 700 !important;
+    }
+
+    /* Horizontal Scrollable Cards Container */
+    .report-column > div:not(.column-header) {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 14px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding: 0 0 12px 0 !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-snap-type: x mandatory !important;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .report-column > div:not(.column-header)::-webkit-scrollbar {
+        height: 0px !important;
+    }
+
+    /* Individual Report Card */
+    .report-item {
+        flex: 0 0 320px !important;
+        min-width: 320px !important;
+        max-width: 320px !important;
+        margin: 0 !important;
+        padding: 18px !important;
+        border: 2px solid #333 !important;
+        border-radius: 8px !important;
+        background-color: white !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        min-height: 150px !important;
+        box-sizing: border-box !important;
+        scroll-snap-align: start !important;
+    }
+
+    .report-item:hover {
+        transform: none !important;
+    }
+
+    .client-name {
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        color: #333 !important;
+        line-height: 1.3 !important;
+        margin-bottom: 4px !important;
+    }
+
+    .report-type {
+        color: #666 !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+    }
+
+    .client-address {
+        color: #666 !important;
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+    }
+
+    .price {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        color: #001d9e !important;
+        margin-top: 4px !important;
+    }
+
+    .report-date {
+        color: #999 !important;
+        font-size: 13px !important;
+        margin-top: 2px !important;
+    }
+}

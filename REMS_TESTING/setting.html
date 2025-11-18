@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/setting.css" />
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <title>Settings | Real Estate System</title>
+</head>
+<body>
+    <!-- Top Navigation -->
+
+    <div class="top-nav">
+        <button class="hamburger-menu" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <h1>
+            <span class="logo"></span>
+            Price Estimation
+        </h1>
+        <div class="top-nav-icons">
+            <a href="setting.html">
+            <button class="icon-btn"><i class="fas fa-cog"></i></button></a>
+            <div class="user-dropdown">
+                <button class="icon-btn" onclick="toggleUserDropdown()">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="dropdown-content" id="userDropdown">
+                    <div class="dropdown-header">
+                        <div class="dropdown-profile-pic">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="dropdown-user-name">Loading...</div>
+                        <div class="dropdown-user-email">Loading...</div>
+                    </div>
+                    <div class="dropdown-body">
+                        <button class="dropdown-logout-btn" onclick="showLogoutModal()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Log out User
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <h2>Confirm Logout</h2>
+            <p>Are you sure you want to log out?</p>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-yes" onclick="confirmLogout()">Yes</button>
+                <button class="modal-btn modal-btn-no" onclick="closeLogoutModal()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="dashboard.html" class="nav-item">Dashboard</a>
+        <a href="management.html" class="nav-item">Management</a>
+        <a href="task.html" class="nav-item">Tasks</a>
+        <a href="report.html" class="nav-item">Report</a>
+        <a href="estimation.html" class="nav-item">Estimation</a>
+        <a href="profile.html" class="nav-item">Profile</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Fixed Header Section -->
+        <div class="fixed-header">
+            <div class="page-header">
+                <h2>Settings</h2>
+            </div>
+        </div>
+
+        <!-- Settings Container -->
+        <div class="settings-container">
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i> Settings saved successfully!
+            </div>
+
+            <!-- Password Section -->
+            <div class="settings-section" id="password-section">
+                <h3><i class="fas fa-lock"></i> Password</h3>
+                <form id="passwordForm">
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <input type="password" id="currentPassword" placeholder="Enter current password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" placeholder="Enter new password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm new password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Update Password</button>
+                    <button type="reset" class="btn-secondary">Cancel</button>
+                </form>
+            </div>
+
+            <!-- Appearance Section -->
+            <div class="settings-section" id="appearance-section">
+                <h3><i class="fas fa-palette"></i> Appearance</h3>
+                
+                <div class="form-group">
+                    <label>Theme</label>
+                    <div class="theme-options">
+                        <div class="theme-option light active" data-theme="light">
+                            <i class="fas fa-sun"></i>
+                            <div>Light</div>
+                        </div>
+                        <div class="theme-option dark" data-theme="dark">
+                            <i class="fas fa-moon"></i>
+                            <div>Dark</div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-primary" onclick="saveAppearance()">Save Appearance</button>
+            </div>
+
+            <!-- Notification Section -->
+            <div class="settings-section" id="notification-section">
+                <h3><i class="fas fa-bell"></i> Notifications</h3>
+                
+                <div class="toggle-container">
+                    <div class="toggle-label">
+                        <strong>Task Reminders</strong>
+                        <span>Get reminders for upcoming tasks</span>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="taskReminders" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <button type="button" class="btn-primary" onclick="saveNotifications()">Save Notifications</button>
+            </div>
+
+            <!-- About Us Section -->
+            <div class="settings-section" id="about-section">
+                <h3><i class="fas fa-info-circle"></i> About Us</h3>
+                <div class="about-content">
+                    <p>
+                        <strong>Real Estate Price Estimation System</strong> is a comprehensive platform designed to streamline 
+                        property management, lead tracking, and price estimation for real estate professionals.
+                    </p>
+                    <p>
+                        Our system provides powerful tools to help you manage your real estate business efficiently, 
+                        from tracking leads and managing tasks to generating accurate price estimations and detailed reports.
+                    </p>
+                    <p>
+                        <strong>Key Features:</strong>
+                    </p>
+                    <ul>
+                        <li>Advanced price estimation algorithms</li>
+                        <li>Comprehensive lead management</li>
+                        <li>Task tracking and reminders</li>
+                        <li>Detailed reporting and analytics</li>
+                        <li>User-friendly dashboard</li>
+                    </ul>
+
+                    <div class="version-info">
+                        <p><strong>Version:</strong> 1.0.0</p>
+                        <p><strong>Last Updated:</strong> October 2025</p>
+                        <p><strong>Contact:</strong> support@realestate-system.com</p>
+                        <p><strong>Website:</strong> www.realestate-system.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script/setting.js"></script>
+    <script src="script/auth_guard.js"></script>
+    <script src="script/mobile.js"></script>
+</body>
+</html>
